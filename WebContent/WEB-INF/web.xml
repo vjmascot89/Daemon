@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>OneProject</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>User Data Retriever</description>
+		<display-name>UserRetriever</display-name>
+		<servlet-name>UserRetriever</servlet-name>
+		<servlet-class>com.exec.module.UserRetriever</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserRetriever</servlet-name>
+		<url-pattern>/UserRetriever</url-pattern>
+		<url-pattern>/UserGet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>It retrieves basic info of the profile</description>
+		<display-name>UserProfileDataRetriever</display-name>
+		<servlet-name>UserProfileDataRetriever</servlet-name>
+		<servlet-class>com.exec.module.UserProfileDataRetriever</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserProfileDataRetriever</servlet-name>
+		<url-pattern>/UserProfileDataRetriever</url-pattern>
+		<url-pattern>/UserProfile</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>It extracts file type from all the dirs files</description>
+		<display-name>FileExtensionExtractor</display-name>
+		<servlet-name>FileExtensionExtractor</servlet-name>
+		<servlet-class>com.exec.module.FileExtensionExtractor</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileExtensionExtractor</servlet-name>
+		<url-pattern>/FileExtensionExtractor</url-pattern>
+		<url-pattern>/ExtExtractor</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>UserProfileUpdation</display-name>
+		<servlet-name>UserProfileUpdation</servlet-name>
+		<servlet-class>com.exec.module.UserProfileUpdation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserProfileUpdation</servlet-name>
+		<url-pattern>/UserProfileUpdation</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>To help user login</description>
+		<display-name>LoginUser</display-name>
+		<servlet-name>LoginUser</servlet-name>
+		<servlet-class>com.exec.module.LoginUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginUser</servlet-name>
+		<url-pattern>/LoginUser</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>This file helps edit some of the user profile variables</description>
+		<display-name>UserSignUpRequest</display-name>
+		<servlet-name>UserSignUpRequest</servlet-name>
+		<servlet-class>com.exec.module.UserSignUpRequest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserSignUpRequest</servlet-name>
+		<url-pattern>/UserSignUpRequest</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>This page helps user to sign in the Application</description>
+		<display-name>UserSignInPage</display-name>
+		<servlet-name>UserSignInPage</servlet-name>
+		<servlet-class>com.exec.module.UserSignInPage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserSignInPage</servlet-name>
+		<url-pattern>/UserSignInPage</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/ecj-4.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/guice-persist-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/guice-servlet-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/guice-spring-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/javax.inject.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/postgresql-9.4-1200.jdbc4.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/mailapi-1.4.7.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/mail.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/activation.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/sendmail.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/java-json.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/httpclient-4.3.4.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/json-20140107.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/httpcore-4.3.2.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/TelerivetAPIClient-1.1.4.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/jar+apache/apache-tomcat-6.0.44/lib/gson-2.3.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
