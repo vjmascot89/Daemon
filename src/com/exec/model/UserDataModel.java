@@ -28,7 +28,9 @@ public class UserDataModel {
 
 	private LoginDataModel userLoginDataModel;
 
-	
+	public UserDataModel() {
+	}
+
 	@Id
 	@Column(name = "USER_ID", unique = true, nullable = false)
 	@GeneratedValue(generator = "generator")
@@ -125,7 +127,10 @@ public class UserDataModel {
 
 	@Override
 	public String toString() {
-		return userAddress + userCity + userCountry + userGender + userName + userState + userStatus + userId
-				+ userAge;
+		return "UserDataModel [userId=" + userId + ", userName=" + userName
+				+ ", " + "userAge=" + userAge + ", userGender=" + userGender
+				+ ", " + "userAddress=" + userAddress + ", userCity="
+				+ userCity + ", " + "userState=" + userState + ", userCountry="
+				+ userCountry + ", " + "userStatus=" + userStatus + "]";
 	}
 }

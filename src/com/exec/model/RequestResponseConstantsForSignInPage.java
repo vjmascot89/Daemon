@@ -4,5 +4,5 @@ public enum RequestResponseConstantsForSignInPage {
     USER_KEY,
     USER_LOGGED_IN,
     USER_LOGGING_TIME,
-    USER_FORGOT_PASSWORD;
+    USER_FORGOT_PASSWORD, USER_DATA_MODEL;
 }

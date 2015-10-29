@@ -15,13 +15,15 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Type;
 
-
 @Entity
 @Table(name = "USER_LOGIN", uniqueConstraints = {
 		@UniqueConstraint(columnNames = { "USER_MOBILE" }),
 		@UniqueConstraint(columnNames = { "USER_EMAIL" }) })
 public class LoginDataModel implements Serializable {
 
+	public LoginDataModel(){
+		
+	}
 	/**
 	 * 
 	 */
@@ -53,7 +55,7 @@ public class LoginDataModel implements Serializable {
 		this.userPassword = userPassword;
 	}
 
-	@Column(name = "USER_MOBILE", unique = true, nullable = false, length=10)
+	@Column(name = "USER_MOBILE", unique = true, nullable = false, length = 10)
 	public String getUserMobile() {
 		return userMobile;
 	}
@@ -79,6 +81,7 @@ public class LoginDataModel implements Serializable {
 	public void setUserDataModel(UserDataModel userDataModel) {
 		this.userDataModel = userDataModel;
 	}
+
 	@Column(name = "USER_OTP_HASHCODE", nullable = true)
 	public String getUserOtpHashcode() {
 		return userOtpHashcode;
@@ -103,7 +106,8 @@ public class LoginDataModel implements Serializable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return userEmail + "  " + userMobile + "  " + userPassword + " "
-				+ userId;
+		return "LoginDataModel [userId=" + userId + ", userEmail=" + userEmail
+				+ ", userMobile" + userMobile + ", userPassword" + userPassword
+				+ ", userOtpHashcode" + userOtpHashcode + "]";
 	}
 }
