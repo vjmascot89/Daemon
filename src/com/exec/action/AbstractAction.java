@@ -11,13 +11,13 @@ import org.hibernate.SessionFactory;
 
 import com.exec.mailer.IMessaging;
 import com.exec.model.LoginDataModel;
+import com.exec.model.PublishableUserDataModel;
 import com.exec.model.RequestResponseConstantsForSignInPage;
 import com.exec.model.UserDataModel;
 import com.exec.module.UserSignInPage;
 import com.exec.util.UtilityMethodClass;
 import com.exec.validator.RandomNumberGenerator;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public abstract class AbstractAction {
 
@@ -127,9 +127,10 @@ public abstract class AbstractAction {
 		List list = UtilityMethodClass.queryDataAndLoginObject(queryString,
 				newSession);
 		if (list.size() > 0) {
-			GsonBuilder gbuilder = new GsonBuilder();
-			
-			return  gbuilder.registerTypeAdapter(UserDataModel.class, (UserDataModel) list.get(0)).create().toJson((UserDataModel) list.get(0));
+			Gson gson = new Gson();
+			PublishableUserDataModel pubUserModel = new PublishableUserDataModel(
+					(UserDataModel) list.get(0));
+			return gson.toJson(pubUserModel);
 		}
 		return null;
 	}
