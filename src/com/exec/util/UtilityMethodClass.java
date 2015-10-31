@@ -20,6 +20,7 @@ public class UtilityMethodClass {
 	}
 	public static List queryDataAndLoginObject(String queryString,Session newSession) {
 
+
 		newSession.beginTransaction();
 		Query query = newSession.createQuery(queryString);
 		List dataModels = query.list();

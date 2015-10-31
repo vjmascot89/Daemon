@@ -2,29 +2,33 @@ package com.exec.module;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import com.exec.filler.UserModelFillerFromRequest;
+import com.exec.model.PublishableUserDataModel;
 import com.exec.model.UserDataModel;
-import com.mysql.jdbc.Driver;
+import com.exec.util.UtilityMethodClass;
+import com.google.gson.Gson;
 /**
  * Servlet implementation class UserRetriever
  */
 public class UserRetriever extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Connection connection = null;
-	Statement statement = null;
-	ResultSet resultSet = null;
+	private static final String SERVLETNAME = "USERRETREIVER";
+	private SessionFactory sessionFactory;
+	private Session newSession;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -39,7 +43,7 @@ public class UserRetriever extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("Init executed");
-		connection  = DatabaseConnectionHelper.databaseConnection();
+		sessionFactory = new Configuration().configure().buildSessionFactory();
 	}
 
 	/**
@@ -49,50 +53,31 @@ public class UserRetriever extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		newSession = sessionFactory.openSession();
 		PrintWriter out = response.getWriter();
-		UserDataModel userDataCheck =  new UserDataModel();
+		UserDataModel usersData =  new UserDataModel();
 	
-		int userId = Integer.parseInt(request.getParameter("uid"));
 		try {
-			new UserModelFillerFromRequest<UserDataModel>().userModelFiller(request,userDataCheck);
-			statement = connection.createStatement();
+			new UserModelFillerFromRequest<UserDataModel>().userModelFiller(request,usersData);
 
-			String query = "select L.userID,ID from ui where ID !=" + userId + "";
-			resultSet = statement.executeQuery(query);
-			int i = 0;
-			while (resultSet.next()) {
-				i++;
+			String queryString = "select U from UserDataModel U where U.userId!="
+					+ usersData.getUserId();
+			List<UserDataModel> list = UtilityMethodClass.queryDataAndLoginObject(queryString,
+					newSession);
+			Gson gson = new Gson();
+			List<PublishableUserDataModel> pubList  = new ArrayList<PublishableUserDataModel>();
+			for(UserDataModel model :list){
+			PublishableUserDataModel pubUserModel = new PublishableUserDataModel(model);
+			pubList.add(pubUserModel);
 			}
-			String x[][] = new String[i][2];
-			int j = 0;
-			resultSet.beforeFirst();
-			while (resultSet.next()) {
-				x[j][0] = resultSet.getString(1);
-				x[j][1] = resultSet.getString(2);
-				j++;
-			}
-			// check weather connection is established or not by isClosed()
-			// method
-
-			if (!connection.isClosed())
-				out.println("Successfully connected to "
-						+ "MySQL server using TCP/IP...   ");
-			connection.close();
-			j = 0;
+			response.addHeader("UsersList", gson.toJson(pubList));
 			response.setContentType("text/html");
-
-			response.setHeader("name", x[0][0]);
-			response.setHeader("boo", x[0][1]);
-			for (j = 1; j < i; j++) {
-
-				response.addHeader("name", x[j][0]);
-				response.addHeader("boo", x[j][1]);
-			}
+			System.out.println(pubList);
 		}
-
 		catch (Exception ex) {
 			out.println("Unable to connect to database." + ex.getMessage());
 		}
-	}
+	
+	}	
 
 }
